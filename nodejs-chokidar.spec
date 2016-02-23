@@ -7,11 +7,11 @@
 Summary:       A neat wrapper around node.js fs.watch / fs.watchFile / fsevents
 Name:          %{?scl_prefix}nodejs-%{npm_name}
 Version:       1.4.1
-Release:       4%{?dist}
+Release:       8%{?dist}
 License:       MIT
 URL:           https://github.com/paulmillr/chokidar
 Source0:       http://registry.npmjs.org/%{npm_name}/-/%{npm_name}-%{version}.tgz
-BuildRequires: nodejs010-runtime
+BuildRequires: %{?scl_prefix}runtime
 ExclusiveArch: %{nodejs_arches} noarch
 BuildArch:     noarch
 Provides:      %{?scl_prefix}nodejs-%{npm_name} = %{version}
@@ -38,6 +38,18 @@ cp -pr index.js lib package.json %{buildroot}%{nodejs_sitelib}/%{npm_name}
 %{nodejs_sitelib}/%{npm_name}
 
 %changelog
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.4.1-8
+- Use proper macro in -runtime dependency
+
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.4.1-7
+- Use proper macro in -runtime dependency
+
+* Tue Feb 16 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.4.1-6
+- Use proper macro in -runtime dependency
+
+* Sun Feb 14 2016 Zuzana Svetlikova <zsvetlik@redhat.com> - 1.4.1-5
+- rebuilt
+
 * Fri Jan 29 2016 Tomas Hrcka <thrcka@redhat.com> - 1.4.1-4
 - Enable scl macros
 
